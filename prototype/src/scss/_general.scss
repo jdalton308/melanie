@@ -11,9 +11,11 @@ body {
 	padding: 0;
 }
 body {
+	padding-top: 50px;
 	font-size: $base-font-size;
-	font-family: $sansFamily;
+	font-family: $seravek-stack;
 	color: $text-color;
+	overflow-x: hidden;
 }
 .center-el {
 	position: absolute;
@@ -24,14 +26,14 @@ body {
 }
 .border-cont {
 	position: relative;
-	padding: 22px 15px;
+	padding: 22px 18px;
 	
 	.border {
 		position: absolute;
 		display: inline-block;
 		background-color: $text-color;
 
-		@at-root[section.dark] & {
+		@at-root section.dark & {
 			background-color: $offwhite;
 		}
 
@@ -75,10 +77,47 @@ button {
 	color: $grey-dark;
 
 	&.blue {
-		background-color: $grey-light;
+		background-color: $green-light;
 	}
 	&.green {
-		background-color: $green-light;
+		background-color: $green;
+	}
+}
+
+
+// Carousel
+//============================
+
+.slick-dots {
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+
+	li {
+		display: inline-block;
+		margin-right: 5px;
+
+		button {
+			display: block;
+			height: 13px;	
+			width: 13px;
+			min-width: 0;
+			padding: 0;
+			font-size: 0;
+			background-color: $white;
+			border-radius: 50%;
+			opacity: 0.5;
+			-webkit-transition: all 0.5s;
+			transition: all 0.5s;
+		}
+
+		&.slick-active {
+			button {
+				opacity: 1;
+			}
+		}
 	}
 }
 
@@ -88,8 +127,10 @@ button {
 
 nav {
 	position: fixed;
+	z-index: 2;
 	top: 0;
 	left: 0;
+	width: 100%;
 	padding: 12px 10px;
 	background-color: $white;
 
@@ -97,16 +138,27 @@ nav {
 		display: inline-block;
 		color: $text-color;
 		font-family: $abadi-stack;
-		font-size: 1.5rem;
+		font-size: 1.4rem;
+		line-height: 0.9em;
+
+		.flip {
+			position: relative;
+			top: -4px;
+			left: -3px;
+			display: inline-block;
+			-webkit-transform: rotate(180deg);
+			transform: rotate(180deg);
+		}
 	}
 	.hamburger {
-		float: left;
+		float: right;
 		display: inline-block;
-		width: 15px;
+		width: 36px;
+		padding-top: 3px;
 
 		.line {
-			height: 3px;
-			margin-bottom: 3px;
+			height: 4px;
+			margin-bottom: 5px;
 			background-color: $grey-light;
 			@include transition(0.5s);
 
@@ -122,30 +174,92 @@ nav {
 //==========================
 
 section {
-	padding: 0 15px;
+	width: 100%;
+	padding: 15px;
+	overflow: hidden;
 
 	&.dark {
 		background-color: $grey-dark;
+		color: $offwhite;
+
+		button {
+			color: $grey-dark;
+		}
+	}
+
+	button {
 		color: $offwhite;
 	}
 }
 
 .section-hero {
 	position: relative;
-	height: 100vh;
+	height: calc(100vh - 50px);
 	padding: 0;
 	background-image: url('/img/hero.jpg');
 	background-size: cover;
-	background-position: center center;
+	background-position: 40% center;
 
+	&.photo-break-1,
+	&.photo-break-2 {
+		height: 50vh;
+		background-position: center center;
+	}
 	&.photo-break-1 {
 		background-image: url('/img/yoga1.jpg');
 	}
 	&.photo-break-2 {
 		background-image: url('/img/yoga2.jpg');
 	}
+
+	.logo {
+		position: absolute;
+		display: inline-block;
+		padding: 8px 15px;
+		color: $offwhite;
+		font-family: $abadi-stack;
+		font-size: 1.8rem;
+
+		.border {
+			background-color: $offwhite;
+
+			&.top,
+			&.bottom {
+				width: 25%;
+			}
+			&.top {
+				right: 0;
+				left: auto;
+			}
+			&.bottom {
+				left: 0;
+				right: auto;
+			}
+			&.left,
+			&.right {
+				height: 100%;
+			}
+			&.left {
+				bottom: 0;
+				top: auto;
+			}
+			&.right {
+				top: 0;
+				bottom: auto;
+			}
+		}
+		.tagline {
+			font-size: 0.75rem;
+			position: absolute;
+			bottom: -5px;
+			right: 8px;
+			display: inline-block;
+		}
+	}
 }
 .section-signup {
+	padding-top: 0;
+
 	.button-cont {
 		padding: 24px 20px;
 		text-align: center;
@@ -158,11 +272,14 @@ section {
 	}
 }
 .section-nutrition {
+	.border-cont {
+		margin-bottom: 45px;
+	}
 	.steps-cont {
 		text-align: center;
 
 		.step {
-			margin-bottom: 14px;
+			margin-bottom: 17px;
 			text-align: left;
 
 			.step-num {
@@ -172,6 +289,7 @@ section {
 				text-align: center;
 				font-weight: 700;
 				background-color: $green-light;
+				color: $white;
 			}
 		}
 	}
@@ -181,5 +299,73 @@ section {
 
 	.slider-header {
 		padding: 42px 23px;
+		text-align: right;
+	}
+	.slider {
+		.slide {
+			position: relative;
+			display: inline-block;
+			height: 50vh;
+			overflow: hidden;
+
+			.title {
+				display: inline-block;
+				padding: 10px;
+				white-space: nowrap;
+				color: $grey-dark;
+				background-color: $green-light;
+			}
+			img {
+				display: block;
+				height: 100%;
+				width: auto;
+			}
+		}
+	}
+}
+.section-hero.happy-cta {
+	height: 70vh;
+	background-image: url('/img/greenhouse.jpg');
+	background-position: left center;
+
+	button {
+		position: absolute;
+		bottom: 25px;
+		right: 15px;
+		font-size: 1.4rem;
+		background-color: $grey-dark;
+	}
+}
+.section-our-story {
+	position: relative;
+	padding-top: 40px;
+	padding-bottom: 55px;
+
+	h3 {
+		margin-bottom: 40px;
+	}
+	p {
+		&:first-child {
+			margin-bottom: 22px;
+		}
+	}
+	img {
+		position: absolute;
+		display: inline-block;
+		height: 84px;
+		width: auto;
+
+		&.orange-1 {
+			top: 15px;
+			right: -20px;
+		}
+		&.orange-2 {
+			bottom: 20px;
+			left: -15px;
+		}
+		&.orange-3 {
+			bottom: -23px;
+			left: 34px;
+		}
 	}
 }

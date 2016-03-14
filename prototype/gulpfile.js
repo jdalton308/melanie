@@ -8,20 +8,22 @@ var htmlMin = require('gulp-htmlmin');
 var server = require('gulp-server-livereload');
 
 var styleFiles = [
+		'./node_modules/slick-carousel/slick/slick.scss',
         './src/scss/main.scss'
     ];
 var jsFiles = [
-		'node_modules/jquery/dist/jquery.min.js',
+		'./node_modules/jquery/dist/jquery.min.js',
+		'./node_modules/slick-carousel/slick/slick.js',
 		'./src/js/**/*.js'
 	];
 var htmlFiles = [
 		'./src/html/**/*.html'
-]
+	];
 
 
 gulp.task('styles', function() {
     gulp.src(styleFiles)
-        .pipe(concat('main.css'))
+        .pipe(concat('main.scss'))
         .pipe(sass())
         .pipe(gulp.dest('./build/css/'));
 });
@@ -51,7 +53,7 @@ gulp.task('server', function(){
 });
 
 gulp.task('watch', function(){
-    gulp.watch(['./src/css/scss/**/*.scss'], ['styles']);
+    gulp.watch(['./src/scss/**/*.scss'], ['styles']);
     gulp.watch(['./src/js/**/*.js'], ['scripts']);
     gulp.watch(['./src/html/**/*.html'], ['html'])
 });

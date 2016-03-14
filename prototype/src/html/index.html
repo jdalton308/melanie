@@ -12,7 +12,7 @@
 <body>
 	
 	<nav>
-		<div class="logo">LL</div>
+		<div class="logo">L<span class="flip">L</span></div>
 		<div class="hamburger">
 			<div class="line"></div>
 			<div class="line"></div>
@@ -22,7 +22,15 @@
 
 	<main>
 		<section class="section-hero">
-			<div class="center-el logo"></div>
+			<div class="center-el logo border-cont">
+				LIQUIDLAB
+				<div class="tagline">a botique juice bar</div>
+
+				<div class="border top"></div>
+				<div class="border left"></div>
+				<div class="border bottom"></div>
+				<div class="border right"></div>
+			</div>
 		</section>
 
 		<section class="section-signup dark">
@@ -79,34 +87,69 @@
 		</section>
 
 		<section class="section-sliders dark">
-			<h2 class="slider-header">
+			<h3 class="slider-header">
 				Jump-start a healthy you with <span class="large">LiquidLab</span>
-			</h2>
+			</h3>
 
-			<div class="slider"></div>
-			<div class="slider"></div>
+			<div class="slider" id="slider-1">
+				<div class="slide">
+					<div class="title center-el">Juice Sampler Package</div>
+					<img src="./img/juice.jpg" alt="juice">
+				</div>
+				<div class="slide">
+					<div class="title center-el">Green Juice. Produced Greenly.</div>
+					<img src="img/juice.jpg" alt="juice">
+				</div>
+				<div class="slide">
+					<div class="title center-el">Green Juice. Produced Greenly.</div>
+					<img src="img/juice.jpg" alt="juice">
+				</div>
+			</div>
+
+			<div class="slider" id="slider-2">
+				<div class="slide">
+					<div class="title center-el">Green Juice. Produced Greenly.</div>
+					<img src="img/chard.jpg" alt="juice">
+				</div>
+				<div class="slide">
+					<div class="title center-el">Green Juice. Produced Greenly.</div>
+					<img src="img/chard.jpg" alt="juice">
+				</div>
+				<div class="slide">
+					<div class="title center-el">Green Juice. Produced Greenly.</div>
+					<img src="img/chard.jpg" alt="juice">
+				</div>
+			</div>
 		</section>
 
 		<section class="section-happy">
 			<div class="border-cont">
+				<div class="border top"></div>
+				<div class="border left"></div>
+				<div class="border bottom"></div>
+				<div class="border right"></div>
+
 				<h3 class="right">Healthy and Happy.</h3>
 				<h3 class="right">No Pressure.</h3>
 				<p>At LiquidLab, we don't tell you what healthy means, we celebrate choosing whatever healthy means to you.</p>
 				<p>Our blog is full of resources that to help you make enlightened choices for healthy living.</p>
 			</div>
-			<div class="happy-cta-img">
-				<button class="grey" id="blog">Explore the Blog</button>
-			</div>
+		</section>
+		<section class="section-hero happy-cta">
+			<button class="grey" id="blog">Explore the Blog</button>
 		</section>
 
 		<section class="section-our-story dark">
 			<h3>Our Story.</h3>
 			<p>LiquidLab was founded by three close friends who wanted to help others improve their lifestyle and incorporate more fruit and vegetables into their diets.</p>
 			<p><a href="#">Learn more</a> about us.</p>
+			<img src="/img/orange.png" alt="orange" class="orange-1">
+			<img src="/img/orange.png" alt="orange" class="orange-2">
+			<img src="/img/orange.png" alt="orange" class="orange-3">
 		</section>
 
 	</main>
 
-	<script src="/js/main.js"></script>
+	<script src="/js/app.js"></script>
 </body>
 </html>

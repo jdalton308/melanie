@@ -13,6 +13,11 @@
 	font-weight: 400;
 }
 @font-face {
+	font-family: 'Seravek';
+	src: url('/fonts/Seravek-Bold.ttf');
+	font-weight: 700;
+}
+@font-face {
 	font-family: 'Abadi';
 	src: url('/fonts/Abadi-MT-Condensed-Regular.ttf');
 	font-weight: 400;
@@ -48,7 +53,7 @@ h2 {
 h3 {
 	font-size: 1.15rem; // 23px
 
-	&.large {
+	.large {
 		@extend h2;
 	}
 }
@@ -64,6 +69,7 @@ a {
 	color: $text-color;
 	text-decoration: none;
 	@include transition();
+	font-weight: 700;
 
 	&:visited {
 		color: $text-color;
