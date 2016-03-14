@@ -2,25 +2,62 @@
 // Typography
 //============================
 
+@font-face {
+	font-family: 'Avenir';
+	src: url('/fonts/AvenirNext-Regular.ttf');
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Seravek';
+	src: url('/fonts/Seravek-Light.ttf');
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Abadi';
+	src: url('/fonts/Abadi-MT-Condensed-Regular.ttf');
+	font-weight: 400;
+}
+
+$aviner-stack: 'Avenir', sans-serif;
+$seravek-stack: 'Seravek', sans-serif;
+$abadi-stack: 'Abadi', Arial, sans-serif;
+
+$base-font-size: 	20px;
+$text-color: 		$grey-dark;
+
+body,
+html {
+	font-family: $seravek-stack;
+	font-size: $base-font-size;
+}
 h1,
 h2,
 h3,
 h4 {
-	line-height: 1.3em;
-	font-weight: 700;
+	font-family: $aviner-stack;
+	line-height: 1.2em;
+	font-weight: 400;
 	margin: 0;
 }
 h1 {
-	font-size: 3rem;
+	font-size: 2rem; // 40px
 }
 h2 {
-	font-size: 2.3rem;
+	font-size: 1.8rem; // 36px
 }
 h3 {
-	font-size: 1.8rem;
+	font-size: 1.15rem; // 23px
+
+	&.large {
+		@extend h2;
+	}
 }
-h4 {
-	font-size: 1.3rem;
+
+p {
+	padding: 0;
+	margin: 0;
+	font-size: 1em; // 20px
+	line-height: 1.4em;
 }
 
 a {
@@ -32,3 +69,32 @@ a {
 		color: $text-color;
 	}
 }
+
+// Logo:
+// Abadi MT, 36px, 1.2em
+// Logo subhead:
+// Abadi MT, 17px, 1.2em
+
+// Button
+// Sans Serif, 11px, 
+
+// Boxed h3:
+// Avenir Next, 23px, 1.4em
+// Boxed p:
+// Seravek, 20px, 1.4em
+
+// Step Cont:
+// Seravek, bold, 18px
+// Step 'Get Started' Btn
+// Seravek, 23px
+
+// 'Jump start...' break
+// Avenir Next, 23px, 1.2em
+// ...large
+// Avenir Next, 36px
+
+// Slider overlays
+// Seravek, 24px
+
+// 'Our story'
+// Avenir, 23px

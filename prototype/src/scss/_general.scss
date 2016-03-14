@@ -15,3 +15,171 @@ body {
 	font-family: $sansFamily;
 	color: $text-color;
 }
+.center-el {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.border-cont {
+	position: relative;
+	padding: 22px 15px;
+	
+	.border {
+		position: absolute;
+		display: inline-block;
+		background-color: $text-color;
+
+		@at-root[section.dark] & {
+			background-color: $offwhite;
+		}
+
+		&.top,
+		&.bottom {
+			height: 2px;
+			width: 25%;
+		}
+		&.left,
+		&.right {
+			width: 2px;
+			height: 25%;
+		}
+		&.top,
+		&.left {
+			top: 0;
+			left: 0;
+		}
+		&.bottom,
+		&.right {
+			bottom: 0;
+			right: 0;
+		}
+	}
+	h3 {
+		&.right {
+			text-align: right;
+		}
+	}
+	p {
+		margin-top: 22px;
+	}
+}
+button {
+	display: inline-block;
+	min-width: 100px;
+	padding: 10px 20px;
+	border: none;
+	font-size: 0.6rem;
+	font-family: $seravek-stack;
+	color: $grey-dark;
+
+	&.blue {
+		background-color: $grey-light;
+	}
+	&.green {
+		background-color: $green-light;
+	}
+}
+
+
+// Nav Bar
+//============================
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 12px 10px;
+	background-color: $white;
+
+	.logo {
+		display: inline-block;
+		color: $text-color;
+		font-family: $abadi-stack;
+		font-size: 1.5rem;
+	}
+	.hamburger {
+		float: left;
+		display: inline-block;
+		width: 15px;
+
+		.line {
+			height: 3px;
+			margin-bottom: 3px;
+			background-color: $grey-light;
+			@include transition(0.5s);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+
+// Sections 
+//==========================
+
+section {
+	padding: 0 15px;
+
+	&.dark {
+		background-color: $grey-dark;
+		color: $offwhite;
+	}
+}
+
+.section-hero {
+	position: relative;
+	height: 100vh;
+	padding: 0;
+	background-image: url('/img/hero.jpg');
+	background-size: cover;
+	background-position: center center;
+
+	&.photo-break-1 {
+		background-image: url('/img/yoga1.jpg');
+	}
+	&.photo-break-2 {
+		background-image: url('/img/yoga2.jpg');
+	}
+}
+.section-signup {
+	.button-cont {
+		padding: 24px 20px;
+		text-align: center;
+
+		button {
+			&:first-child {
+				margin-right: 12px;
+			}
+		}
+	}
+}
+.section-nutrition {
+	.steps-cont {
+		text-align: center;
+
+		.step {
+			margin-bottom: 14px;
+			text-align: left;
+
+			.step-num {
+				display: inline-block;
+				padding: 6px 10px;
+				margin-bottom: 10px;
+				text-align: center;
+				font-weight: 700;
+				background-color: $green-light;
+			}
+		}
+	}
+}
+.section-sliders {
+	padding: 0;
+
+	.slider-header {
+		padding: 42px 23px;
+	}
+}

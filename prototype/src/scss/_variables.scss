@@ -7,21 +7,27 @@ $black:		    #000;
 $grey:		    #444;
 $lightGrey:	  	#999;
 $lighterGrey:   #ccc;
-$offWhite: 		#FAFAFA;
+$offWhite: 		#fcfff5;
 $white: 		#FFF;
 
 // Color palette
-$blue: 			#;
-$green: 		#;
-$green-light: 	#;
-$grey-light: 	#;
-$grey-dark:		#;
 
+$orange: 		#ebb55e;
+$green: 		#8ebf9b;
+$green-light: 	#b3d7d7;
+$grey-light: 	#70828d;
+$grey-dark:		#2c3436;
+
+
+
+//// SIZING ////
+$header-height: 	50px;
 
 
 //// FONTS ////
 $base-font-size: 	20px;
 $sansFamily: 		Arial, 'sans-serif';
+
 
 
 //// MIXINS ////
