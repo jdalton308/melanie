@@ -2,7 +2,8 @@ $(function(){
 
 	var sliderSettings = {
 		dots: true,
-		arrows: false
+		arrows: false,
+		infinite: false
 	}
 
 	$('#slider-1').slick(sliderSettings);
