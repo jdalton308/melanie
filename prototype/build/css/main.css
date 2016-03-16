@@ -170,7 +170,7 @@ body {
       width: 25%; }
     .border-cont .border.left, .border-cont .border.right {
       width: 2px;
-      height: 25%; }
+      height: 39%; }
     .border-cont .border.top, .border-cont .border.left {
       top: 0;
       left: 0; }
@@ -315,12 +315,16 @@ section {
       display: inline-block; }
 
 .section-signup {
-  padding-top: 0; }
+  padding-top: 0;
+  overflow: visible; }
   .section-signup .button-cont {
     padding: 24px 20px;
     text-align: center; }
     .section-signup .button-cont button:first-child {
       margin-right: 12px; }
+  .section-signup .border-cont .left {
+    z-index: 2;
+    height: 128%; }
 
 .section-nutrition .border-cont {
   margin-bottom: 45px; }

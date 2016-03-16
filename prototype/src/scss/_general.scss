@@ -48,7 +48,7 @@ body {
 		&.left,
 		&.right {
 			width: 2px;
-			height: 25%;
+			height: 39%;
 		}
 		&.top,
 		&.left {
@@ -264,15 +264,21 @@ section {
 }
 .section-signup {
 	padding-top: 0;
+	overflow: visible;
 
 	.button-cont {
 		padding: 24px 20px;
 		text-align: center;
-
 		button {
 			&:first-child {
 				margin-right: 12px;
 			}
+		}
+	}
+	.border-cont {
+		.left {
+			z-index: 2;
+			height: 128%;
 		}
 	}
 }
